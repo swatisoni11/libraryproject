@@ -16,14 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from libraryapp.views import index
-#from . import views
+from libraryapp import views
 
 urlpatterns = [
 
-    #path("", views.index, name="index"),
+    path("", views.index, name="index"),
+    path("", views.booklist, name="booklist"),
 
-    #path('index/',index , name="index"),
-    #path('booklist', BooklistView.as_view(), name="book-list"),
+    path('booklist', BooklistView.as_view(), name="book-list"),
     #path('bookcreate', BookCreateView.as_view(), name="book-create"),
     #path('bookdetail', BookDetailView.as_view(), name="book-detail"),
 ]
